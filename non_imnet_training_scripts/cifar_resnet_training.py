@@ -33,7 +33,7 @@ if __name__ == "__main__":
     data_dir = './data/cifar-100-python'
     wrapper = torchvision.datasets.CIFAR100
     num_classes = 100                       # num classes in dataset
-    batch_size = 500                        # batch size
+    batch_size = 256                        # batch size
     model_width = 16                        # resnet model width
     epochs = 100                            # train epochs
     

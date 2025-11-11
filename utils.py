@@ -523,7 +523,7 @@ def train_logits(model, train_loader, test_loader, epochs=200, remap_class_idxs=
             scaler.scale(loss).backward()
             scaler.step(optimizer)
             scaler.update()
-            scheduler.step(loss)
+            scheduler.step()
             losses.append(loss.item())
 
         acc = evaluate_logits(model, test_loader, remap_class_idxs=remap_class_idxs)

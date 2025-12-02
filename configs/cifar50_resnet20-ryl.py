@@ -5,7 +5,7 @@ config = {
     },
     'model': {
         'name': 'resnet20x16',
-        'dir': './checkpoints/cifar50_logits/',
+        'dir': './checkpoints/cifar50_logits/resnet20x16/pairsplits/',
         'bases': []
     },
     'merging_fn': 'match_tensors_zipit',

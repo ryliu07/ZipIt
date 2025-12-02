@@ -32,7 +32,7 @@ def evaluate_pair_models(eval_type, models, config, csv_file):
     write_to_csv(results, csv_file=csv_file)
     print(results)
 
-s
+
 if __name__ == "__main__":
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     config_name = 'cifar50_resnet20-ryl'

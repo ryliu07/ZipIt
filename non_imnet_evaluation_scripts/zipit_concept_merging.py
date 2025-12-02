@@ -92,7 +92,7 @@ def run_node_experiment(node_config, experiment_config, pairs, device, csv_file)
 if __name__ == "__main__":
     
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    config_name = 'cifar50_resnet20'
+    config_name = 'cifar50_resnet20-ryl'
     skip_pair_idxs = [0]
     
     experiment_configs = [
@@ -101,7 +101,7 @@ if __name__ == "__main__":
         # {'stop_node': 21, 'params':{'a': 1., 'b': 1.}},
         # {'stop_node': None, 'params':{'a': 0.01, 'b': 1.0}, 'dataset': {'train_fraction': .0001, 'no_transform': False}}, 
         # Alpha Ablations
-        # {'stop_node': None, 'params': {'a': .0, 'b': 1.}},
+        # {'stop_node': None, 'params': {'a': .0, 'b': 1.}}
     ]
     
     raw_config = get_config_from_name(config_name, device=device)

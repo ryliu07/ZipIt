@@ -32,16 +32,17 @@ def evaluate_pair_models(eval_type, models, config, csv_file):
     write_to_csv(results, csv_file=csv_file)
     print(results)
 
-
+s
 if __name__ == "__main__":
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    config_name = 'cifar5_resnet20'
+    config_name = 'cifar50_resnet20-ryl'
     skip_pair_idxs = [0]
     
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     raw_config = get_config_from_name(config_name, device=device)
     model_dir = raw_config['model']['dir']
     model_name = raw_config['model']['name']
+    print(model_dir, model_name)
     run_pairs = find_runable_pairs(model_dir, model_name, skip_pair_idxs=skip_pair_idxs)
     csv_file = os.path.join(
         './csvs',

@@ -53,7 +53,7 @@ def hyperparam_search(
 
 if __name__ == "__main__":
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    config_name = 'cifar5_resnet20'
+    config_name = 'cifar50_resnet20-ryl'
     eval_pair = 0
     
     stop_nodes = [21]

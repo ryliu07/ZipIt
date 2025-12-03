@@ -496,7 +496,8 @@ def train_logits(model, train_loader, test_loader, epochs=200, remap_class_idxs=
     optimizer = torch.optim.Adam(params=model.parameters(), lr=0.008)
     ne_iters = len(train_loader)
     # scheduler = lr_scheduler.LinearLR(optimizer, min_lr=.0000001, verbose=True, factor=np.sqrt(.1), cooldown=0.)
-    scheduler = torch.optim.lr_scheduler.LinearLR(optimizer, start_factor=1, end_factor=1e-7, total_iters=ne_iters)
+    # FIXED: total_iters should be ne_iters * epochs to decay over all epochs, not just first epoch
+    scheduler = torch.optim.lr_scheduler.LinearLR(optimizer, start_factor=1, end_factor=1e-7, total_iters=ne_iters * epochs)
     early_stopper = EarlyStopper(patience=epochs, min_delta=.0001)
     
     scaler = GradScaler()
